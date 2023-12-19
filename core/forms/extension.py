@@ -34,7 +34,7 @@ class ExtensionField(forms.Field):
 
     @staticmethod
     def check_is_extension(value):
-        if not isinstance(value, Extension):
+        if not isinstance(value, Extension) or not isinstance(len(value), 8):
             raise ValidationError(_("Cannot find extension"), code="extension-not-found")
 
     @property
